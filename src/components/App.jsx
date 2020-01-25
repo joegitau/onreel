@@ -11,9 +11,9 @@ class App extends Component {
     return (
       <div className="container">
         <Switch>
-          <Route to="/" exact componenent={Movies} />
-          <Route to="/movie:id" componenent={Movie} />
-          <Route componenent={NotFound} />
+          <Route path="/" exact component={Movies} />
+          <Route path="/movie/:id" component={Movie} />
+          <Route component={NotFound} />
         </Switch>
       </div>
     );

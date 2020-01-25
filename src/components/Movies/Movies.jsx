@@ -23,7 +23,15 @@ class Movies extends Component {
         <h1>All Movies</h1>
         {this.state.movies.map(movie => (
           <div className="card">
-            <h4>{movie.title}</h4>
+            {<img src="" alt="movie cover" /> && (
+              <img
+                src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                alt={movie.title}
+              />
+            )}
+            <Link to={`/movie/${movie.id}`}>
+              <h4>{movie.title}</h4>
+            </Link>
           </div>
         ))}
       </div>

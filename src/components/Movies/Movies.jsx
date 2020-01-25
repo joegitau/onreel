@@ -9,18 +9,23 @@ class Movies extends Component {
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=30291ba20f46e36961edb5c6f4a6a811`;
     const data = await fetch(url);
     const movies = await data.json();
-    console.log(movies);
+    console.log(movies.results);
+    this.setState({ movies: movies.results });
   };
 
   componentDidMount() {
-    const movies = this.fetchMovies();
-    this.setState({ movies });
+    this.fetchMovies();
   }
 
   render() {
     return (
       <div className="content">
         <h1>All Movies</h1>
+        {this.state.movies.map(movie => (
+          <div className="card">
+            <h4>{movie.title}</h4>
+          </div>
+        ))}
       </div>
     );
   }

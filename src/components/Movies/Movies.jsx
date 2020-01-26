@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./movies.css";
+import NoImage from "../../img/movie-reel.png";
 
 class Movies extends Component {
   state = { movies: [] };
@@ -9,7 +10,7 @@ class Movies extends Component {
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=30291ba20f46e36961edb5c6f4a6a811`;
     const data = await fetch(url);
     const movies = await data.json();
-    console.log(movies.results);
+    // console.log(movies.results);
     this.setState({ movies: movies.results });
   };
 
@@ -22,8 +23,8 @@ class Movies extends Component {
       <div className="content">
         <h1>All Movies</h1>
         {this.state.movies.map(movie => (
-          <div className="card" key={movie.id}>
-            {<img src="" alt="movie cover" /> && (
+          <div className="item" key={movie.id}>
+            {<img src={NoImage} alt="movie cover" /> && (
               <img
                 src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                 alt={movie.title}

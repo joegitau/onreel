@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "./movies.css";
+import NoImage from "../../img/movie-reel.png";
 
 class Movie extends Component {
   state = {
@@ -19,13 +21,20 @@ class Movie extends Component {
 
   render() {
     const movie = this.state.movie ? (
-      <div className="card" key={this.state.movie.id}>
-        {<img src="" alt="movie cover" /> && (
-          <img
-            src={`https://image.tmdb.org/t/p/w200/${this.state.movie.poster_path}`}
-            alt={this.state.movie.title}
-          />
-        )}
+      <div className="item" key={this.state.movie.id}>
+        <div className="item-header">
+          {<img src={NoImage} alt="movie cover" /> && (
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${this.state.movie.poster_path}`}
+              alt={this.state.movie.title}
+            />
+          )}
+        </div>
+        <div className="item-body">
+          <h4>{this.state.movie.title}</h4>
+          <h4>{this.state.movie.release_date}</h4>
+          <p>{this.state.movie.overview}</p>
+        </div>
       </div>
     ) : (
       <h1>Movie not found</h1>

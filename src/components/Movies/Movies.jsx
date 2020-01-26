@@ -22,7 +22,7 @@ class Movies extends Component {
       <div className="content">
         <h1>All Movies</h1>
         {this.state.movies.map(movie => (
-          <div className="card">
+          <div className="card" key={movie.id}>
             {<img src="" alt="movie cover" /> && (
               <img
                 src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}

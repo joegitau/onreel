@@ -1,2 +1,28 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-right: -20px;
+}
 
+.inner-content {
+  margin: 0 auto;
+  padding: 60px 40px;
+}
 
+.item {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  width: 100%;
+  background-image: radial-gradient(
+    circle at 20% 50%,
+    rgba(0%, 0%, 0%, 0.98) 0%,
+    rgba(7.06%, 7.06%, 7.06%, 0.88) 100%
+  );
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  word-break: break-word;
+}

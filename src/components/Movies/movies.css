@@ -20,9 +20,8 @@
 }
 
 .item {
-  padding: 20px;
   display: flex;
-  margin: 40px;
+  margin: 20px;
   width: 100%;
 }
 
@@ -34,7 +33,6 @@
   display: flex;
   margin: 40px;
   width: 100%;
-  background-color: #fff;
 }
 
 .item-body-content {
@@ -47,6 +45,24 @@
   color: #fff;
 }
 
+.item-footer {
+  margin: 20px auto;
+}
+
+.btn {
+  padding: 1.4rem 1.8rem;
+  border-radius: 0.375rem;
+  background: #32325d;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #32325d;
+  border: #32325d;
+}
+
 .zoom {
   transition: transform 0.5s, filter 2s ease-in-out;
   filter: grayscale(0);
@@ -56,3 +72,7 @@
   transform: scale(1.1);
   filter: grayscale(50%);
 }
+
+/* background-image: radial-gradient(circle at 20% 50%, rgba(16.47%, 15.29%, 14.51%, 0.98) 0%, rgba(22.35%, 22.35%, 22.35%, 0.88) 100%);
+
+radial-gradient(circle at 20% 50%, rgba(252%, 253%, 248%, 0.98) 0%, rgba(168%, 183%, 142%, 0.88) 100%) */

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './movies.css';
 import NoImage from '../../img/movie-reel.png';
 
@@ -25,7 +26,7 @@ class Movie extends Component {
         className="item"
         key={this.state.movie.id}
         style={{
-          backgroundImage: `url( https://image.tmdb.org/t/p/w1280/${this.state.movie.backdrop_path} )`,
+          background: `radial-gradient(circle at 20% 50%, rgba(20%, 23%, 24%, 0.98) 0%, rgba(10%, 20%, 12%, 0.38) 100%), url( https://image.tmdb.org/t/p/w1280/${this.state.movie.backdrop_path} )`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'
@@ -50,7 +51,14 @@ class Movie extends Component {
     );
     return (
       <div className="content">
-        <div className="inner-content">{movie}</div>
+        <div className="inner-content">
+          {movie}
+          <div className="item-footer">
+            <Link to="/">
+              <button className="btn">View All Movies</button>
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }

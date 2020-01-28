@@ -21,11 +21,20 @@ class Movie extends Component {
 
   render() {
     const movie = this.state.movie ? (
-      <div className="item" key={this.state.movie.id}>
+      <div
+        className="item"
+        key={this.state.movie.id}
+        style={{
+          backgroundImage: `url( https://image.tmdb.org/t/p/w1280/${this.state.movie.backdrop_path} )`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
         <div className="item-header">
           {<img src={NoImage} alt="movie cover" /> && (
             <img
-              src={`https://image.tmdb.org/t/p/w500/${this.state.movie.poster_path}`}
+              src={`https://image.tmdb.org/t/p/w342/${this.state.movie.poster_path}`}
               alt={this.state.movie.title}
             />
           )}
@@ -39,7 +48,11 @@ class Movie extends Component {
     ) : (
       <h1>Movie not found</h1>
     );
-    return <div className="content">{movie}</div>;
+    return (
+      <div className="content">
+        <div className="inner-content">{movie}</div>
+      </div>
+    );
   }
 }
 

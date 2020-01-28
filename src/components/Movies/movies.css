@@ -1,2 +1,33 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.content-header {
+  margin-left: 70px;
+}
 
+.content-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+}
+
+.item {
+  padding: 20px;
+}
+
+.item img {
+  border-radius: 0.325rem;
+}
+
+.zoom {
+  transition: transform 0.5s, filter 2s ease-in-out;
+  filter: grayscale(0);
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+  filter: grayscale(50%);
+}

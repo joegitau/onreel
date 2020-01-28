@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import "./movies.css";
-import NoImage from "../../img/movie-reel.png";
+import React, { Component } from 'react';
+import './movies.css';
+import NoImage from '../../img/movie-reel.png';
 
 class Movie extends Component {
   state = {
@@ -26,23 +26,23 @@ class Movie extends Component {
         key={this.state.movie.id}
         style={{
           backgroundImage: `url( https://image.tmdb.org/t/p/w1280/${this.state.movie.backdrop_path} )`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat"
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="item-header">
+        <div className="item-body">
           {<img src={NoImage} alt="movie cover" /> && (
             <img
               src={`https://image.tmdb.org/t/p/w342/${this.state.movie.poster_path}`}
               alt={this.state.movie.title}
             />
           )}
-        </div>
-        <div className="item-body">
-          <h4>{this.state.movie.title}</h4>
-          <h4>{this.state.movie.release_date}</h4>
-          <p>{this.state.movie.overview}</p>
+          <div className="item-body-content">
+            <h4>{this.state.movie.title}</h4>
+            <h4>{this.state.movie.release_date}</h4>
+            <p>{this.state.movie.overview}</p>
+          </div>
         </div>
       </div>
     ) : (

@@ -3,6 +3,11 @@
   flex-wrap: wrap;
 }
 
+.inner-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .content-header {
   margin-left: 70px;
 }
@@ -16,10 +21,30 @@
 
 .item {
   padding: 20px;
+  display: flex;
+  margin: 40px;
+  width: 100%;
 }
 
 .item img {
   border-radius: 0.325rem;
+}
+
+.item-body {
+  display: flex;
+  margin: 40px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.item-body-content {
+  padding: 100px 30px;
+}
+
+.item-body-content h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
 }
 
 .zoom {
